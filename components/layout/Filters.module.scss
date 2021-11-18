@@ -1,0 +1,142 @@
+@import '../../styles/_variables';
+@import '../../styles/_mixins';
+
+.filterWrapper {
+    width: 100%;
+    margin: 1rem .25rem 2.5rem .25rem;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+        gap: 2.5rem;
+
+        .dropdownWrapper {
+            width: 50%;
+        }
+    }
+
+    .searchWrapper {
+        flex-grow: 1;
+        display: flex;
+        position: relative;
+
+        .input {
+            all:unset;
+            background: $light-white;
+            color: $light-very-dark-blue;
+            min-width: 7rem;
+            max-width: 50%;
+            transition: max-width .5s ease-in-out, min-width .5s ease-in-out;
+            padding: 1rem;
+            padding-left: 4rem;
+            border-radius: .5rem;
+            @include boxShadow;
+            z-index: 1;
+
+            &.dark {
+                background:$dark-dark-blue;
+                color: $dark-white;
+            }
+
+            &:active, &:focus, &:hover {
+                @include boxShadowHover;
+                transform: initial;
+                min-width: 300px;
+                @media screen and (max-width: 500px) {
+                    min-width: calc(100% - 5rem);
+                    max-width: calc(100% - 5rem);
+                }
+
+            }
+            @media screen and (max-width: 500px) {
+                min-width: calc(100% - 5rem);
+                max-width: calc(100% - 5rem);
+            }
+        }
+        .icon {
+            height: 100%;
+            padding: 1rem;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            pointer-events: none;
+            z-index: 2;
+        }
+    }
+
+    .dropdownWrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-width: 250px;
+
+        .regionTitle, .regionList {
+            background: $light-white;
+            color: $light-very-dark-blue;
+            @include boxShadow;
+            padding: 1rem;
+            border-radius: .5rem;
+        }
+
+        .regionTitle {
+            display: flex;
+            justify-content: space-between;
+            gap: .5rem;
+            @include boxShadow;
+
+            &.dark {
+                background:$dark-dark-blue;
+                color: $dark-white;
+            }
+
+            p {
+                margin: 0;
+                display: inline-block;
+            }
+
+            &:hover {
+                @include boxShadowHover;
+                transform: initial;
+                cursor: pointer;
+            }
+        }
+
+        .regionList {
+            display: flex;
+            width: 100%;
+            margin: 0;
+            position: absolute;
+            top: calc(100% + .25rem);
+            z-index: 3;
+            flex-direction: column;
+            gap: .5rem;
+            @include boxShadowHover;
+            transform: initial;
+
+            &.dark {
+                background:$dark-dark-blue;
+                color: $dark-white;
+            }
+
+            li {
+                list-style-type: none;
+
+                &:nth-child(1) {
+                    font-style: italic;
+                    font-size: .9rem;
+                    opacity: .6;
+                    &:hover {
+                        font-weight: initial;
+                        opacity: 1;
+                    }
+                }
+                &:hover {
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

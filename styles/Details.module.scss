@@ -1,0 +1,138 @@
+@import './_mixins';
+@import './_variables';
+
+.detailsWrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem;
+
+    .button {
+        @include btn;
+        padding: .5rem 2rem;
+        font-size: 1rem;
+
+        &.dark {
+            @include btnDark;
+            padding: .5rem 2rem;
+            font-size: 1rem;
+        }
+    }
+
+    .content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        column-gap: 5rem;
+        @media screen and (max-width: 950px) {
+            grid-template-columns: unset;
+            grid-template-rows: auto;
+            row-gap: 2rem;
+        }
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            @include boxShadow;
+
+            @media screen and (max-width: 500px) {
+
+            }
+        }
+
+        .countryDetails {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex: 2;
+
+            .countryTitle {
+
+            }
+            .countryColumns {
+                display: flex;
+                @include smScreenFlexColumn;
+                column-gap: 5rem;
+
+                @media screen and (max-width: 500px) {
+                    row-gap: 3rem;
+                }
+
+            }
+        }
+    }
+}
+
+
+.countryDetail {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: inline-flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    li {
+        list-style-type: none;
+
+
+        ul {
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: .2rem;
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+}
+
+.countryNeighbors {
+    display: flex;
+
+    @media screen and (max-width: 500px) {
+        @include smScreenFlexColumn;
+    }
+
+    p {
+
+        margin: 3rem 0;
+        display: inline-flex;
+        font-weight: bold;
+        @media screen and (max-width: 500px) {
+            margin: 3rem 0 1rem 0;
+        }
+    }
+
+    ul {
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 .5rem;
+        padding: 0;
+        display: inline-flex;
+        gap: .5rem;
+
+        @media screen and (max-width: 500px) {
+            margin-left: 0;
+            align-items: unset;
+        }
+
+        .neighborButton {
+            list-style-type: none;
+            @include btn;
+            font-size: 1rem;
+            padding: .25rem .5rem;
+            display: inline-flex;
+
+            &.dark {
+                @include btnDark;
+                font-size: 1rem;
+                padding: .25rem .5rem;
+            }
+        }
+    }
+}

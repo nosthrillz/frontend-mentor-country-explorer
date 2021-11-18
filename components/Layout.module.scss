@@ -1,0 +1,57 @@
+@import '../styles/_variables';
+@import '../styles/_mixins';
+
+
+.headerWrapper {
+    width: 100%;
+    @include layoutPadding;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $light-white;
+    color: $light-very-dark-blue;
+    @include boxShadow;
+    position:relative;
+    z-index: 2;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+}
+
+.themeSwitcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+
+    img {
+        transition: transform .5s ease-in-out;
+    }
+
+    &:hover img {
+        transform: rotate(180deg);
+    }
+    .button {
+        all: unset;
+        font-weight: bold;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.mainWrapper {
+    width: 100%;
+    @include layoutPadding;
+}
+
+.darkHeader {
+    background: $dark-dark-blue;
+    color: $dark-white;
+}
+

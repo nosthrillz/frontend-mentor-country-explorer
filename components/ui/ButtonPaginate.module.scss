@@ -1,0 +1,11 @@
+@import '../../styles/_variables';
+@import '../../styles/_mixins';
+
+.button {
+    padding: .5rem .25rem;
+    @include btn;
+
+    &.dark {
+        @include btnDark;
+    }
+}

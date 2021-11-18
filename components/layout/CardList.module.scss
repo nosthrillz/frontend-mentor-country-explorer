@@ -1,0 +1,8 @@
+.cardListWrapper{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: flex-start;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 5rem;
+}

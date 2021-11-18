@@ -1,0 +1,34 @@
+/*********************
+* Light mode colors  *
+*********************/
+
+// Text
+$light-very-dark-blue: hsl(200, 15%, 8%);
+// Input
+$light-dark-grey: hsl(0, 0%, 52%);
+// Background
+$light-very-light-grey: hsl(0, 0%, 98%);
+// Elements
+$light-white: hsl(0, 0%, 100%);
+
+
+
+/*********************
+* Dark mode colors   *
+*********************/
+
+// Text
+$dark-white: $light-white;
+// Elements
+$dark-dark-blue: hsl(209, 23%, 22%);
+// Background
+$dark-very-dark-blue: hsl(207, 26%, 17%);
+
+
+/*********************
+* Spacing            *
+*********************/
+
+$small-padding: 1.5rem;
+$medium-padding: 3rem;
+$large-padding: 5rem;
