@@ -3,7 +3,7 @@
 
 .filterWrapper {
     width: 100%;
-    margin: 1rem .25rem 2.5rem .25rem;
+    margin: 1rem 0 2.5rem 0;
     display: flex;
     justify-content: space-between;
 
@@ -94,6 +94,17 @@
             p {
                 margin: 0;
                 display: inline-block;
+            }
+
+            .dropdownIcon {
+                all:unset;
+                transform: scale(1,1.5) rotate(90deg);
+                transition: transform .2s ease-in;
+                font-weight: bold;
+
+                &.dropdownIconOpen {
+                    transform: scale(1.5,1) rotate(180deg);
+                }
             }
 
             &:hover {

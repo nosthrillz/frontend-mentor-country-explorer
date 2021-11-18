@@ -15,6 +15,31 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode
 - Bonus: I added pagination, so you can navigate through the list of countries
+### Screenshots
+
+#### Home page
+
+![](./screenshots/Home.png)
+
+#### Details page
+
+![](./screenshots/Details.png)
+
+#### Features
+
+![](./screenshots/Filter-Search.png)
+
+![](./screenshots/Filter-Region.png)
+
+![](./screenshots/Pagination.png)
+
+#### Mobile
+
+![](./screenshots/Mobile.png)
+
+### Live deployment preview
+
+[country-explorer-ten.vercel.app](https://country-explorer-ten.vercel.app/)
 ## My process
 
 ### Built with
@@ -23,3 +48,12 @@ Users should be able to:
 - Next.js with statically generated paths and props
 - SCSS and CSS modules
 
+### What I learned
+
+I learned how to do pagination and I finally got some practice with getStaticPaths and getStaticProps.
+The layout was no joke either.
+### Continued development
+
+I strongly believe the current component structure is not ideal. Architecture-wise, there are plenty improvements to be made.
+
+I plan to come back and refactor for more "DRY"ness :)

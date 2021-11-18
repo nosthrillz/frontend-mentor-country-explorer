@@ -15,6 +15,7 @@ const Filters = ({ onSearch, onRegion, regions }) => {
   );
   const [region, setRegion] = useState();
   const [showFilter, setShowFilter] = useState(false);
+  const [dropdownClicked, setDropdownClicked] = useState(false);
 
   const inputClasses = darkTheme
     ? styles.input + " " + styles.dark
@@ -46,6 +47,12 @@ const Filters = ({ onSearch, onRegion, regions }) => {
     setRegion(item);
     setShowFilter(false);
     setRegionDropdownText(defaultRegionDropdownText);
+    setDropdownClicked(false);
+  };
+
+  const dropdowClickHandler = (e) => {
+    setShowFilter(!showFilter);
+    setDropdownClicked(!dropdownClicked);
   };
 
   return (
@@ -63,12 +70,17 @@ const Filters = ({ onSearch, onRegion, regions }) => {
         />
       </div>
       <div className={styles.dropdownWrapper}>
-        <div
-          className={regionTitleClasses}
-          onClick={() => setShowFilter(!showFilter)}
-        >
+        <div className={regionTitleClasses} onClick={dropdowClickHandler}>
           <p>{regionDropdownText}</p>
-          <button>^</button>
+          <button
+            className={
+              dropdownClicked
+                ? styles.dropdownIcon + " " + styles.dropdownIconOpen
+                : styles.dropdownIcon
+            }
+          >
+            ^
+          </button>
         </div>
         {showFilter && (
           <ul className={regionListClasses}>

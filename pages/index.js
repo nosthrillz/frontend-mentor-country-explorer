@@ -36,14 +36,12 @@ export default function Home({ data, regions }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`https://restcountries.com/v2/all`);
-  const data = await res.json();
+  const response = await fetch(`https://restcountries.com/v2/all`);
+  const results = await response.json();
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+  // remove bugged Åland entry.
+  // TODO further investigate why this fails in details
+  const data = results.filter((result) => !result.name.includes("Åland"));
 
   const regions = [...new Set(data.map((item) => item.region))].sort((a, b) =>
     a < b ? -1 : 0
